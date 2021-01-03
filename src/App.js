@@ -8,6 +8,8 @@ import Orders from './components/pages/Orders';
 import './App.css';
 
 const App = () => {
+    const envpath = process.env.PUBLIC_URL;
+    console.log(envpath);
     return (
         <Router>
         <div>
@@ -17,8 +19,9 @@ const App = () => {
                 {/* <Route path="/Orders" exact component={Orders}/>
                 <Route path="/Orders/:id" exact component={OrderDetails}/> */}
             
-                <Route path="/" exact component={Orders}/>    
-                <Route path="/:id" exact component={OrderDetails}/>
+                   
+                <Route path= {envpath + '/:id'} exact component={OrderDetails}/>
+                <Route path={envpath + '/'} exact component={Orders}/> 
             </Switch>
         </div>
         </Router>

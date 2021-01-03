@@ -23,9 +23,10 @@ const OrderIdCards = ({orderid}) => {
     const classes = useStyles();
     const date=orderid.slice(-8);
     // console.log(orderid);
+    const envpath = process.env.PUBLIC_URL;
 
     return (
-        <Card className={classes.root} component={Link} to={`/${orderid}`}>
+        <Card className={classes.root} component={Link} to={`${envpath}/${orderid}`}>
             <CardActionArea>                
             <CardContent>
                
